@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-login{
+    background-image: url('./assets/bg-login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ant-collapse>.ant-collapse-item >.ant-collapse-header .ant-collapse-expand-icon {
+    height: 36px;
+}
+
+.ant-collapse,
+.ant-collapse .ant-collapse-content {
+    border: none !important;
+    background-color: transparent !important;;
+}
