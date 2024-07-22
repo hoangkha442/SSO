@@ -16,7 +16,8 @@ const Login = () => {
     setProductObj((prev) => ({ ...prev, [updateType]: value }));
   };
   const handleLogin = () => {
-    navigate('/home')
+    localStorage.setItem('ADMIN_TOKEN', JSON.stringify('ADMIN_TOKEN'));
+    navigate('/home/my-apps')
   }
 
   return (
