@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const InputText = ({ labelTitle, labelStyle, type, containerStyle, defaultValue, placeholder, updateFormValue, updateType }) => {
+const InputText = ({ labelTitle, labelStyle, type, containerStyle, defaultValue, placeholder, updateFormValue, updateType, styleP }) => {
   const [value, setValue] = useState(defaultValue);
 
   const updateInputValue = (val) => {
@@ -10,15 +10,15 @@ const InputText = ({ labelTitle, labelStyle, type, containerStyle, defaultValue,
 
   return (
     <div className={`form-control w-full ${containerStyle}`}>
-      <label className="label">
-        <span className={`label-text text-base-content ${labelStyle}`}>{labelTitle}</span>
+      <label className={`label col-span-2 ${labelStyle}`}>
+        {labelTitle}
       </label>
       <input
         type={type || 'text'}
         value={value}
         placeholder={placeholder || ''}
         onChange={(e) => updateInputValue(e.target.value)}
-        className="shadow mt-1 appearance-none border rounded w-full py-3 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+        className={`input col-span-10 shadow custom-input-shadow appearance-none border border-[#D0D5DD] w-full px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${styleP}`}
       />
     </div>
   );
