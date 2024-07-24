@@ -8,6 +8,12 @@ import Groups from './pages/Groups/Groups';
 import Clients from './pages/Clients/Clients';
 import Users from './pages/Users/Users';
 import RealSettings from './pages/RealSettings/RealSettings';
+import ClientDetail from './pages/Clients/ClientDetail';
+import GroupsDetail from './pages/Groups/GroupsDetail';
+import AddNewUser from './pages/Users/AddNewUser';
+import UserDetail from './pages/Users/UserDetails/UserDetail';
+import Registration from './pages/RealSettings/Registration';
+
 const App = () => {
   return (
     <Router>
@@ -19,9 +25,14 @@ const App = () => {
         </Route>
         <Route path='/admin' element={<Home />}>
           <Route path='groups' element={<Groups />} />
+          <Route path='groups/detail/:id' element={<GroupsDetail />} />
           <Route path='clients' element={<Clients />} />
+          <Route path='clients/detail/:id' element={<ClientDetail />} />
           <Route path='users' element={<Users />} />
+          <Route path='users/add-new' element={<AddNewUser />} />
+          <Route path='users/detail/:id' element={<UserDetail />} />
           <Route path='real-settings' element={<RealSettings />} />
+          <Route path='real-settings/registration' element={<Registration />} />
         </Route>
       </Routes>
     </Router>

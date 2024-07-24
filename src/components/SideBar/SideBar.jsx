@@ -15,13 +15,13 @@ export default function SideBar() {
     <div className="relative mt-4">
       <Link to={to} className={`flex items-center gap-4 rounded-lg p-3 w-full transition duration-300 ${isActive(to) ? 'bg-[#009FF5] text-white' : 'text-black'}`}>
         <Icon className={`w-5 h-5 ${isActive(to) ? 'text-white' : 'text-[#344054]'}`} />
-        <div className="text-start flex-1">
+        <div className="hidden sm:block text-start flex-1">
           <p className={`font-normal text-xl ${isActive(to) ? 'text-white' : 'text-[#344054]'}`}>{label}</p>
         </div>
         {isDropdown && (isActive(to) ? (
-          <AiOutlineUp className="w-5 h-5 text-white transition duration-300" />
+          <AiOutlineUp className="hidden sm:block w-5 h-5 text-white transition duration-300" />
         ) : (
-          <AiOutlineDown className="w-5 h-5 text-[#344054] transition duration-300" />
+          <AiOutlineDown className="hidden sm:block w-5 h-5 text-[#344054] transition duration-300" />
         ))}
       </Link>
     </div>
@@ -36,14 +36,14 @@ export default function SideBar() {
   const renderAdminLinks = () => (
     <>
       <MenuLink to="/admin/clients" icon={AiOutlineHome} label="Clients" />
-      <MenuLink to="/admin/groups" icon={FaUser} label="Groups" className="mt-4" />
-      <MenuLink to="/admin/users" icon={FaUser} label="Users" className="mt-4" />
+      <MenuLink to="/admin/groups" icon={FaUser} label="Groups" />
+      <MenuLink to="/admin/users" icon={FaUser} label="Users" />
       <div className="">
         <MenuLink to="/admin/real-settings" icon={AiOutlineHome} label="Real Settings" isDropdown />
         {isActive('/admin/real-settings') && (
           <div className="transition duration-300 ease-in-out transform flex flex-col">
-            <SubMenuLink to="/admin/real-settings/login" label="Login" />
-            <SubMenuLink to="/admin/real-settings/themes" label="Themes" />
+            <SubMenuLink onClick={() => { message.warning('Tính năng chưa phát triển!') }} label="Login" />
+            <SubMenuLink onClick={() => { message.warning('Tính năng chưa phát triển!') }} label="Themes" />
             <SubMenuLink to="/admin/real-settings/registration" label="Registration" />
           </div>
         )}
@@ -72,8 +72,8 @@ export default function SideBar() {
   );
 
   return (
-    <section className='w-64 border-x border-[#D0D3D9]'>
-      <div className="h-[100px] flex items-center justify-center p-4 border-b border-[#D0D3D9] w-[260px]">
+    <section className='w-full sm:w-64 border-x border-[#D0D3D9]'>
+      <div className="h-[100px] flex items-center justify-center p-4 border-b border-[#D0D3D9] sm:w-[260px]">
         <div className="h-16 w-36">
           <img src={logo} alt="logo" className='w-full h-full object-cover' />
         </div>
