@@ -5,7 +5,7 @@ import InputText from '../../../components/Input/InputText';
 import SelectBox from '../../../components/Input/SelectBox';
 import SearchBar from '../../../components/Input/SearchBar';
 import RoleMappingTable from './RoleMappingTable';
-import SessionTable from './SessionTable'; // Import SessionTable
+import SessionTable from './SessionTable';
 import GroupsTable from './GroupsTable';
 
 export default function UserDetail() {
@@ -46,9 +46,9 @@ export default function UserDetail() {
               labelTitle="User ID:"
               updateFormValue={updateFormValue}
               updateType="userId"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               defaultValue="45fr567fghy678"
               styleP='py-[10px] rounded-[10px]'
               disabled
@@ -57,9 +57,9 @@ export default function UserDetail() {
               labelTitle="Created at:"
               updateFormValue={updateFormValue}
               updateType="createdAt"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               defaultValue="10/03/2023 10:30PM"
               styleP='py-[10px] rounded-[10px]'
               disabled
@@ -68,9 +68,9 @@ export default function UserDetail() {
               labelTitle="Required Action:"
               updateFormValue={updateFormValue}
               updateType="requiredAction"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               styleP='py-[10px] rounded-[10px]'
               options={[
                 { value: '', label: 'Select action' },
@@ -78,14 +78,14 @@ export default function UserDetail() {
                 { value: 'action2', label: 'Action 2' },
               ]}
             />
-            <p className='text-[#344054] text-xl font-semibold mt-4'>General Settings</p>
+            <p className='text-[#344054] text-lg sm:text-xl md:text-2xl font-semibold mt-4'>General Settings</p>
             <InputText
               labelTitle="User Name:"
               updateFormValue={updateFormValue}
               updateType="username"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               defaultValue="anh_tt"
               styleP='py-[10px] rounded-[10px]'
             />
@@ -93,9 +93,9 @@ export default function UserDetail() {
               labelTitle="Email:"
               updateFormValue={updateFormValue}
               updateType="email"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               defaultValue="anhtt.thd@email.com"
               styleP='py-[10px] rounded-[10px]'
             />
@@ -103,9 +103,9 @@ export default function UserDetail() {
               labelTitle="First Name:"
               updateFormValue={updateFormValue}
               updateType="firstName"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               defaultValue="The Anh"
               styleP='py-[10px] rounded-[10px]'
             />
@@ -113,15 +113,15 @@ export default function UserDetail() {
               labelTitle="Last Name:"
               updateFormValue={updateFormValue}
               updateType="lastName"
-              containerStyle="grid grid-cols-12 gap-7 items-center"
-              labelStyle="text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end"
-              inputStyle="col-span-12 sm:col-span-8"
+              containerStyle="grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              labelStyle="text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2"
+              inputStyle="col-span-12 md:col-span-10"
               defaultValue="Tran"
               styleP='py-[10px] rounded-[10px]'
             />
-            <div className="grid grid-cols-12 items-center gap-7">
-              <label className='text-lg font-medium text-[#637D92] col-span-12 sm:col-span-2 text-end' htmlFor="">Groups:</label>
-              <button className='col-span-12 sm:col-span-2 flex justify-center gap-3 items-center bg-[#F9FAFB] hover:text-[#4a8aac] transition-all duration-500 input shadow custom-input-shadow py-3 appearance-none border border-[#D0D5DD] my-2 px-3 leading-tight focus:outline-none focus:shadow-outline rounded-[10px] text-lg font-medium text-[#009FF5]'>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+              <label className='text-sm sm:text-lg font-medium text-[#637D92] col-span-12 md:col-span-2' htmlFor="">Groups:</label>
+              <button className='col-span-12 md:col-span-3 md:col-start-3 flex justify-center gap-3 items-center bg-[#F9FAFB] hover:text-[#4a8aac] transition-all duration-500 input shadow custom-input-shadow py-3 appearance-none border border-[#D0D5DD] my-2 px-3 leading-tight focus:outline-none focus:shadow-outline rounded-[10px] text-sm sm:text-lg font-medium text-[#009FF5]'>
                 <PlusOutlined /> Join Group
               </button>
             </div>
@@ -140,15 +140,15 @@ export default function UserDetail() {
 
   return (
     <section className='px-4 py-6 sm:px-8 sm:py-8'>
-        <div className="flex gap-4 sm:gap-5 items-center">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center">
+        <div className="flex-1 w-full">
           <SearchBar 
             styleClass=''
             styleInput='py-3 sm:py-4 pl-10 sm:pl-12 placeholder:font-semibold text-lg sm:text-xl' 
             styleIcon='text-xl sm:text-2xl top-3 sm:top-4 mt-1'
           />
         </div>
-        <div className="text-center sm:text-end">
+        <div className="text-end w-full sm:w-auto">
           <button onClick={() => { 
             navigate('/admin/users/add-new')
            }} className='text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-7 bg-[#009FF5] rounded-lg text-white'>
@@ -159,29 +159,29 @@ export default function UserDetail() {
       <div className="bg-white border border-[#D0D3D9] rounded-xl mt-5 p-6 sm:p-9">
         <div className="flex items-center gap-2 cursor-pointer mb-10" onClick={() => { navigate('/admin/users') }}>
           <LeftOutlined className='font-semibold text-[#344054]' />
-          <p className='text-xl sm:text-2xl font-semibold text-[#344054]'>anhTT</p>
+          <p className='text-lg sm:text-xl md:text-2xl font-semibold text-[#344054]'>anhTT</p>
         </div>
-        <div className="flex mb-9">
+        <div className="flex flex-wrap mb-9">
           <button
-            className={`px-4 py-2 text-2xl border border-[#D0D5DD] rounded-tl-lg rounded-bl-lg ${activeTab === 'details' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
+            className={`px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-2xl border border-[#D0D5DD] rounded-tl-lg rounded-bl-lg ${activeTab === 'details' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
             onClick={() => setActiveTab('details')}
           >
             Details
           </button>
           <button
-            className={`px-4 py-2 text-2xl border-y border-r border-[#D0D5DD] ${activeTab === 'roleMapping' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
+            className={`px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-2xl border-y border-r border-[#D0D5DD] ${activeTab === 'roleMapping' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
             onClick={() => setActiveTab('roleMapping')}
           >
             Role Mapping
           </button>
           <button
-            className={`px-4 py-2 text-2xl border-y border-r border-[#D0D5DD] ${activeTab === 'groups' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
+            className={`px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-2xl border-y border-r border-[#D0D5DD] ${activeTab === 'groups' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
             onClick={() => setActiveTab('groups')}
           >
             Groups
           </button>
           <button
-            className={`px-4 py-2 text-2xl border-y border-r border-[#D0D5DD] rounded-tr-lg rounded-br-lg ${activeTab === 'session' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
+            className={`px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-2xl border-y border-r border-[#D0D5DD] rounded-tr-lg rounded-br-lg ${activeTab === 'session' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
             onClick={() => setActiveTab('session')}
           >
             Session

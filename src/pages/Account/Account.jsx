@@ -18,11 +18,11 @@ const Account = () => {
   };
 
   return (
-    <section className="container max-w-[80%] mx-auto" style={{ height: 'calc(100vh - 100px)' }}>
-      <div className="py-10">
-        <p className="font-bold text-[28px] text-[#344054]">Account Settings</p>
-        <div className="grid grid-cols-12 gap-8 mt-8">
-          <div className="col-span-4">
+    <section className="container max-w-[90%] lg:max-w-[80%] mx-auto" style={{ height: 'calc(100% - 100px)' }}>
+      <div className="py-6 sm:py-8 md:py-10">
+        <p className="font-bold text-xl sm:text-2xl md:text-3xl text-[#344054]">Account Settings</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6 sm:mt-8 md:mt-10">
+          <div className="lg:col-span-4">
             <div className="bg-white rounded-[10px] overflow-hidden shadow-lg">
               <div className="h-28">
                 <img 
@@ -35,76 +35,76 @@ const Account = () => {
                 <img 
                   src={avatar}
                   alt="Profile" 
-                  className="w-[200] h-[200] object-cover rounded-full border-4 border-white"
+                  className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] object-cover rounded-full border-4 border-white"
                 />
               </div>
-              <div className="text-center px-6 p-8">
-                <h2 className="font-medium text-[40px] text-[#344054]">Hi Sara James!</h2>
+              <div className="text-center px-4 sm:px-6 p-6 sm:p-8">
+                <h2 className="font-medium text-lg sm:text-xl md:text-2xl text-[#344054]">Hi Sara James!</h2>
               </div>
             </div>
           </div>
 
-          <div className="col-span-8">
-            <form className="p-8 pt-0 pl-[125px] rounded-[10px]">
+          <div className="lg:col-span-8">
+            <form className="p-4 sm:p-6 md:p-8 pt-0 lg:pl-[125px] rounded-[10px]">
               <InputText
                 labelTitle="Name:"
                 updateFormValue={updateFormValue}
                 updateType="name"
-                containerStyle="grid grid-cols-12 gap-4 items-center"
+                containerStyle="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
                 placeholder={formValues.name}
-                labelStyle="text-lg font-medium text-[#344054]"
-                styleP='py-[10px] rounded-[10px]'
+                labelStyle="text-sm sm:text-lg font-medium text-[#344054]  col-span-2"
+                styleP="py-2 sm:py-[10px] rounded-[10px]"
               />
               <InputText
                 labelTitle="Job Title:"
                 updateFormValue={updateFormValue}
                 updateType="jobTitle"
-                containerStyle="grid grid-cols-12 gap-4 items-center"
+                containerStyle="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
                 placeholder={formValues.jobTitle}
-                labelStyle="text-lg font-medium text-[#344054]"
-                styleP='py-[10px] rounded-[10px]'
+                labelStyle="text-sm sm:text-lg font-medium text-[#344054]  col-span-2"
+                styleP="py-2 sm:py-[10px] rounded-[10px]"
               />
               <InputText
                 labelTitle="Email:"
                 type="email"
-                containerStyle="grid grid-cols-12 gap-4 items-center"
+                containerStyle="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
                 placeholder={formValues.email}
-                labelStyle="text-lg font-medium text-[#344054]"
+                labelStyle="text-sm sm:text-lg font-medium text-[#344054]  col-span-2"
                 updateFormValue={updateFormValue}
                 updateType="email"
-                styleP='py-[10px] rounded-[10px]'
+                styleP="py-2 sm:py-[10px] rounded-[10px]"
               />
               <InputText
                 labelTitle="Phone:"
                 type="tel"
-                containerStyle="grid grid-cols-12 gap-4 items-center"
+                containerStyle="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
                 placeholder={formValues.phone}
-                labelStyle="text-lg font-medium text-[#344054]"
+                labelStyle="text-sm sm:text-lg font-medium text-[#344054]  col-span-2"
                 updateFormValue={updateFormValue}
                 updateType="phone"
-                styleP='py-[10px] rounded-[10px]'
+                styleP="py-2 sm:py-[10px] rounded-[10px]"
               />
               <InputText
                 labelTitle="Password:"
                 type="password"
-                containerStyle="grid grid-cols-12 gap-4 items-center"
+                containerStyle="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
                 placeholder={formValues.password}
-                labelStyle="text-lg font-medium text-[#344054]"
+                labelStyle="text-sm sm:text-lg font-medium text-[#344054] col-span-2"
                 updateFormValue={updateFormValue}
                 updateType="password"
-                styleP='py-[10px] rounded-[10px]'
+                styleP="py-2 sm:py-[10px] rounded-[10px]"
               />
               <InputText
                 labelTitle="Address:"
-                containerStyle="grid grid-cols-12 gap-4 items-center"
+                containerStyle="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
                 placeholder={formValues.address}
-                labelStyle="text-lg font-medium text-[#344054]"
+                labelStyle="text-sm sm:text-lg font-medium text-[#344054]  col-span-2"
                 updateFormValue={updateFormValue}
                 updateType="address"
-                styleP='py-[10px] rounded-[10px]'
+                styleP="py-2 sm:py-[10px] rounded-[10px]"
               />
-              <div className="grid grid-cols-12 text-center">
-                <button type="submit" className="bg-[#009FF5] text-white px-4 py-1 rounded-[10px] hover:bg-blue-500 col-span-2 col-start-3 text-center text-[20px] mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-12 text-center">
+                <button type="submit" className="bg-[#009FF5] text-white px-4 leading-9 sm:py-1 rounded-[10px] hover:bg-blue-500 col-span-4 sm:col-span-3 col-start-5 sm:col-start-3 text-center text-sm sm:text-[20px] mt-6 sm:mt-8">
                   Update
                 </button>
               </div>

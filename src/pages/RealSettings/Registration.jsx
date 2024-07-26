@@ -1,73 +1,75 @@
 import React, { useState } from 'react';
-import { DeleteOutlined, CloseOutlined  } from '@ant-design/icons';
+import { DeleteOutlined, CloseOutlined } from '@ant-design/icons';
 import SearchBar from '../../components/Input/SearchBar';
 import { Modal, Input, Checkbox, Button } from 'antd';
+
 const AddDefaultGroupsModal = ({ visible, onClose }) => {
-    const [selectedGroups, setSelectedGroups] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
-  
-    const groups = [
-      'Zimbra Test',
-      'THDSplunk',
-      'Zimbra Test',
-      'Zimbra Test',
-      'Zimbra Test',
-      'Zimbra Test',
-      'Zimbra Test'
-    ];
-  
-    const handleCheckboxChange = (group) => {
-      setSelectedGroups((prev) =>
-        prev.includes(group) ? prev.filter((item) => item !== group) : [...prev, group]
-      );
-    };
-  
-    const handleSearchChange = (e) => {
-      setSearchTerm(e.target.value);
-    };
-  
-    const filteredGroups = groups.filter((group) =>
-      group.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  
-    return (
-      <Modal
-        visible={visible}
-        onCancel={onClose}
-        footer={null}
-        width={400}
-        closeIcon={<CloseOutlined />}
-      >
-        <h2 className="text-xl font-semibold mb-4">Add Default Groups</h2>
-        <Input
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className="mb-4"
-        />
-        {filteredGroups.map((group, index) => (
-          <div key={index} className="flex items-center mb-2">
-            <Checkbox
-              checked={selectedGroups.includes(group)}
-              onChange={() => handleCheckboxChange(group)}
-            >
-              {group}
-            </Checkbox>
-          </div>
-        ))}
-        <Button
-          type="primary"
-          className="w-full mt-4"
-          onClick={() => {
-            console.log('Selected Groups:', selectedGroups);
-            onClose();
-          }}
-        >
-          Add
-        </Button>
-      </Modal>
+  const [selectedGroups, setSelectedGroups] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const groups = [
+    'Zimbra Test',
+    'THDSplunk',
+    'Zimbra Test',
+    'Zimbra Test',
+    'Zimbra Test',
+    'Zimbra Test',
+    'Zimbra Test'
+  ];
+
+  const handleCheckboxChange = (group) => {
+    setSelectedGroups((prev) =>
+      prev.includes(group) ? prev.filter((item) => item !== group) : [...prev, group]
     );
   };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredGroups = groups.filter((group) =>
+    group.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <Modal
+      visible={visible}
+      onCancel={onClose}
+      footer={null}
+      width={400}
+      closeIcon={<CloseOutlined />}
+    >
+      <h2 className="text-xl font-semibold mb-4">Add Default Groups</h2>
+      <Input
+        placeholder="Search"
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="mb-4"
+      />
+      {filteredGroups.map((group, index) => (
+        <div key={index} className="flex items-center mb-2">
+          <Checkbox
+            checked={selectedGroups.includes(group)}
+            onChange={() => handleCheckboxChange(group)}
+          >
+            {group}
+          </Checkbox>
+        </div>
+      ))}
+      <Button
+        type="primary"
+        className="w-full mt-4"
+        onClick={() => {
+          console.log('Selected Groups:', selectedGroups);
+          onClose();
+        }}
+      >
+        Add
+      </Button>
+    </Modal>
+  );
+};
+
 const Registration = () => {
   const [activeTab, setActiveTab] = useState('defaultRoles');
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -173,35 +175,35 @@ const Registration = () => {
 
   return (
     <section className='px-4 py-6 sm:px-8 sm:py-8'>
-        <div className="flex gap-4 sm:gap-5 items-center">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center">
+        <div className="flex-1 w-full">
           <SearchBar  
             styleClass=''
             styleInput='py-3 sm:py-4 pl-10 sm:pl-12 placeholder:font-semibold text-lg sm:text-xl' 
             styleIcon='text-xl sm:text-2xl top-3 sm:top-4 mt-1'
           />
         </div>
-        <div className="text-center sm:text-end ">
+        <div className="text-end w-full sm:w-auto">
           <button onClick={() => setIsModalVisible(true)} className='text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-7 bg-[#009FF5] rounded-lg text-white'>
             Add User
           </button>
           <AddDefaultGroupsModal
-                visible={isModalVisible}
-                onClose={() => setIsModalVisible(false)}
-            />
+            visible={isModalVisible}
+            onClose={() => setIsModalVisible(false)}
+          />
         </div>
       </div>
       <div className="bg-white border border-[#D0D3D9] rounded-xl p-6 sm:p-9 mt-5">
-        <p className='text-xl sm:text-2xl font-semibold text-[#344054]'>Users Registration</p>
-        <div className="flex my-5">
+        <p className='text-lg sm:text-xl md:text-2xl font-semibold text-[#344054]'>Users Registration</p>
+        <div className="flex flex-wrap my-5">
           <button
-            className={`px-4 py-2 text-2xl border border-[#D0D5DD] rounded-tl-lg rounded-bl-lg ${activeTab === 'defaultRoles' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
+            className={`px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-2xl border border-[#D0D5DD] rounded-tl-lg rounded-bl-lg ${activeTab === 'defaultRoles' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
             onClick={() => setActiveTab('defaultRoles')}
           >
             Default Roles
           </button>
           <button
-            className={`px-4 py-2 text-2xl border border-[#D0D5DD] rounded-tr-lg rounded-br-lg ${activeTab === 'defaultGroups' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
+            className={`px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-2xl border-y border-r border-[#D0D5DD] rounded-tr-lg rounded-br-lg ${activeTab === 'defaultGroups' ? 'text-[#FCFCFC] bg-[#009FF5]' : 'text-[#344054]'}`}
             onClick={() => setActiveTab('defaultGroups')}
           >
             Default Groups

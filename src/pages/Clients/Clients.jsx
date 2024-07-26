@@ -50,15 +50,15 @@ export default function Clients() {
 
   return (
     <section className='px-4 py-6 sm:px-8 sm:py-8'>
-      <div className="flex gap-4 sm:gap-5 items-center">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center">
+        <div className="flex-1 w-full">
           <SearchBar 
             styleClass=''
             styleInput='py-3 sm:py-4 pl-10 sm:pl-12 placeholder:font-semibold text-lg sm:text-xl' 
             styleIcon='text-xl sm:text-2xl top-3 sm:top-4'
           />
         </div>
-        <div className="text-center sm:text-end">
+        <div className="text-end w-full sm:w-auto">
           <button className='text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-7 bg-[#009FF5] rounded-lg text-white'>
             Create New Client
           </button>
@@ -70,7 +70,7 @@ export default function Clients() {
         <div className="overflow-x-auto mt-4 sm:mt-6">
           <table className="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200">
             <thead>
-              <tr >
+              <tr>
                 <th scope="col" className="text-left text-xs sm:text-xl font-semibold text-[#344054] tracking-wider py-0 pl-5">
                   <div className='pl-2 bg-[#fccac9] h-[80px] leading-[80px]'>
                     Client ID
@@ -92,7 +92,7 @@ export default function Clients() {
                   </div>
                 </th>
                 <th scope="col" className="text-left text-xs sm:text-xl font-semibold text-[#344054] tracking-wider py-0 pl-2">
-                  <div className='pl-2 bg-[#fccac9] h-[80px] leading-[80px]'>
+                  <div className='pl-2 bg-[#fccac9] h-[80px] leading-[80px] whitespace-nowrap'>
                     Home URL
                   </div>
                 </th>

@@ -9,7 +9,7 @@ export default function Home() {
       <SideBar />
       <div className="flex flex-col w-full">
         <Header />
-        <div className="bg-[#F5F5F6] p-[2px]">
+        <div className="bg-[#F5F5F6] p-[2px]" style={{ height: 'calc(100% - 100px)'}}>
           <Outlet />
         </div>
       </div>

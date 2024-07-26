@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MinusOutlined } from '@ant-design/icons';
 
-const InputText = ({ labelTitle, labelStyle, type, containerStyle, defaultValue, placeholder, updateFormValue, updateType, styleP, showDeleteIcon }) => {
+const InputText = ({ labelTitle, labelStyle, type, containerStyle, defaultValue, placeholder, updateFormValue, updateType, styleP, showDeleteIcon, icon }) => {
   const [value, setValue] = useState(defaultValue);
 
   const updateInputValue = (val) => {
@@ -11,7 +11,7 @@ const InputText = ({ labelTitle, labelStyle, type, containerStyle, defaultValue,
 
   return (
     <div className={`form-control w-full ${containerStyle}`}>
-      <label className={`label col-span-2 ${labelStyle}`}>
+      <label className={`label ${labelStyle}`}>
         {labelTitle}
       </label>
       <div className="col-span-10 flex items-center">
