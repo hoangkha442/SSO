@@ -20,7 +20,6 @@ Dự án hướng đến việc giải quyết các vấn đề thường gặp 
 - Khó mở rộng khi có thêm ứng dụng mới
 - Rủi ro bảo mật khi mỗi ứng dụng tự xử lý xác thực
 
-Thông qua việc tích hợp Keycloak, hệ thống giúp tập trung hóa quá trình xác thực và phân quyền, đồng thời cải thiện trải nghiệm đăng nhập cho người dùng.
 
 ---
 
@@ -83,7 +82,5 @@ Trong dự án này, Keycloak đóng vai trò là **Identity Provider** trung t�
 - Cấu hình client cho từng ứng dụng
 - Quản lý phiên đăng nhập
 - Hỗ trợ đăng nhập một lần cho nhiều ứng dụng
-
-Việc sử dụng Keycloak giúp giảm tải phần xử lý xác thực trong ứng dụng, đồng thời tăng tính bảo mật và khả năng mở rộng của hệ thống.
 
 ---
